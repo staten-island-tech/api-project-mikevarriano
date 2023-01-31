@@ -1,15 +1,18 @@
 import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import { setupCounter } from "./counter.js";
 
-function mv(name) {
-  const mvPromise = new Promise(function (resolve, reject) {
-    resolve("hello ${name}");
+const input = prompt("Enter a GitHub username:");
+const displayDiv = document.getElementById("display-data");
+
+fetch(`https://api.github.com/users/${input}`)
+  .then(response => response.json())
+  .then(data => {
+    displayDiv.innerHTML = `
+      <p>Name: ${data.name}</p>
+      <p>Location: ${data.location}</p>
+      <p>Followers: ${data.followers}</p>
+    `;
+  })
+  .catch(error => {
+    console.error("An error occurred: " + error);
   });
-  return mvPromise;
-}
-const suzie = mv("suzie");
 
-suzie.then((result) => {
-  console.log(result);
-});
