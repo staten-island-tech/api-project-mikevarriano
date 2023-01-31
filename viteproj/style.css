@@ -1,5 +1,5 @@
 
-  #display-data {
+  #mvarriano {
     border: 1px solid black;
     width: 60rem;
     height: 10rem;
@@ -8,6 +8,9 @@
 ;
   }
 
+body {
 
+  background-image: url("https://images.pexels.com/photos/1816819/pexels-photo-1816819.jpeg?auto=compress&cs=tinysrgb&w=1600")
+} 
 
 
